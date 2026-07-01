@@ -32,12 +32,12 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${geist.variable} ${jetbrainsMono.variable}`}>
       <body className="bg-bg0 font-sans text-fg1 antialiased">
-        <div className="mx-auto flex min-h-screen max-w-4xl flex-col px-6 py-16 sm:px-12">
-          <div className="flex flex-col gap-8 sm:flex-row sm:gap-16">
-            <aside className="flex flex-shrink-0 flex-row items-center gap-6 sm:w-32 sm:flex-col sm:items-start sm:gap-8">
+        <div className="mx-auto flex min-h-screen max-w-5xl flex-col px-6 py-24 sm:px-12">
+          <div className="flex min-h-0 flex-1 flex-col gap-8 sm:grid sm:grid-cols-[7rem_1fr_7rem] sm:gap-16">
+            <aside className="flex flex-shrink-0 flex-row items-center gap-6 sm:flex-col sm:items-start sm:gap-14">
               <Link
                 href="/"
-                className=" flex h-10 w-10 flex-shrink-0 items-center justify-center no-underline"
+                className="flex h-10 w-10 flex-shrink-0 items-center justify-center no-underline"
               >
                 <svg width="40" height="40" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
                   <rect width="64" height="64" rx="14" fill="#8ec07c" />
@@ -57,9 +57,16 @@ export default function RootLayout({
               </Link>
               <SiteNav />
             </aside>
-            <main className="flex-1">{children}</main>
+            <main className="flex min-h-0 flex-col">
+              <div className="flex min-h-0 flex-1 flex-col gap-6 sm:gap-14">
+                <h1 className="flex h-10 items-center font-sans text-2xl font-bold tracking-wide text-fg0">
+                  Finley Neilson
+                </h1>
+                {children}
+              </div>
+              <SiteFooter />
+            </main>
           </div>
-          <SiteFooter />
         </div>
       </body>
     </html>

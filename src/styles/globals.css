@@ -16,19 +16,22 @@
 
   --color-accent: #689d6a;
   --color-accent-bright: #8ec07c;
+  --color-pink: #d3869b;
 }
 
-body {
-  background-color: var(--color-bg0);
-  color: var(--color-fg1);
-}
+@layer base {
+  body {
+    background-color: var(--color-bg0);
+    color: var(--color-fg1);
+  }
 
-a {
-  color: var(--color-accent);
-  text-decoration: underline;
-  text-underline-offset: 2px;
-}
+  a {
+    color: var(--color-accent);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
 
-a:hover {
-  color: var(--color-accent-bright);
+  a:hover {
+    color: var(--color-accent-bright);
+  }
 }

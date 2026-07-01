@@ -3,11 +3,7 @@ import Link from "next/link";
 export default function HomePage() {
   return (
     <div className="flex flex-col gap-6">
-      <h1 className="font-mono text-2xl font-bold tracking-wide text-fg0 uppercase">
-        Finley John Neilson
-      </h1>
       <div className="flex flex-col gap-4 leading-relaxed text-fg1">
-        <p>I&apos;m a developer based in Auckland. Write your bio here.</p>
         <p>
           But I must explain to you how all this mistaken idea of denouncing
           pleasure and praising pain was born and I will give you a complete
