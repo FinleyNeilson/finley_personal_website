@@ -2,36 +2,35 @@ import Link from "next/link";
 
 export default function HomePage() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#2e026d] to-[#15162c] text-white">
-      <div className="container flex flex-col items-center justify-center gap-12 px-4 py-16">
-        <h1 className="text-5xl font-extrabold tracking-tight text-white sm:text-[5rem]">
-          Create <span className="text-[hsl(280,100%,70%)]">T3</span> App
-        </h1>
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-8">
-          <Link
-            className="flex max-w-xs flex-col gap-4 rounded-xl bg-white/10 p-4 text-white hover:bg-white/20"
-            href="https://create.t3.gg/en/usage/first-steps"
-            target="_blank"
-          >
-            <h3 className="text-2xl font-bold">First Steps →</h3>
-            <div className="text-lg">
-              Just the basics - Everything you need to know to set up your
-              database and authentication.
-            </div>
-          </Link>
-          <Link
-            className="flex max-w-xs flex-col gap-4 rounded-xl bg-white/10 p-4 text-white hover:bg-white/20"
-            href="https://create.t3.gg/en/introduction"
-            target="_blank"
-          >
-            <h3 className="text-2xl font-bold">Documentation →</h3>
-            <div className="text-lg">
-              Learn more about Create T3 App, the libraries it uses, and how to
-              deploy it.
-            </div>
-          </Link>
-        </div>
+    <div className="flex flex-col gap-6">
+      <h1 className="font-mono text-2xl font-bold tracking-wide text-fg0 uppercase">
+        Finley John Neilson
+      </h1>
+      <div className="flex flex-col gap-4 leading-relaxed text-fg1">
+        <p>I&apos;m a developer based in Auckland. Write your bio here.</p>
+        <p>
+          But I must explain to you how all this mistaken idea of denouncing
+          pleasure and praising pain was born and I will give you a complete
+          account of the system, and expound the actual teachings of the great
+          explorer of the truth, the master-builder of human happiness. No one
+          rejects, dislikes, or avoids pleasure itself, because it is pleasure,
+          but because those who do not know how to pursue pleasure rationally
+          encounter consequences that are extremely painful. Nor again is
+          there anyone who loves or pursues or desires to obtain pain of itself,
+          because it is pain, but because occasionally circumstances occur in
+          which toil and pain can procure him some great pleasure. To take a
+          trivial example, which of us ever undertakes laborious physical
+          exercise, except to obtain some advantage from it? But who has any
+          right to find fault with a man who chooses to enjoy a pleasure that
+          has no annoying consequences, or one who avoids a pain that produces
+          no resultant pleasure?
+        </p>
+        <p>
+          Right now I&apos;m working on [thing]. Check out my{" "}
+          <Link href="/projects">projects</Link> or{" "}
+          <Link href="/blog">read my blog</Link>.
+        </p>
       </div>
-    </main>
+    </div>
   );
 }

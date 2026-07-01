@@ -3,4 +3,32 @@
 @theme {
   --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, "SFMono-Regular", monospace;
+
+  /* Gruvbox dark palette */
+  --color-bg0: #282828;
+  --color-bg1: #3c3836;
+  --color-bg2: #504945;
+
+  --color-fg0: #fbf1c7;
+  --color-fg1: #ebdbb2;
+  --color-fg4: #a89984;
+
+  --color-accent: #689d6a;
+  --color-accent-bright: #8ec07c;
+}
+
+body {
+  background-color: var(--color-bg0);
+  color: var(--color-fg1);
+}
+
+a {
+  color: var(--color-accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+a:hover {
+  color: var(--color-accent-bright);
 }
