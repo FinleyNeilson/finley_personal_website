@@ -2,6 +2,7 @@ import "~/styles/globals.css";
 
 import { type Metadata } from "next";
 import { JetBrains_Mono, Work_Sans } from "next/font/google";
+import Image from "next/image";
 import Link from "next/link";
 
 import { SiteNav } from "~/components/site-nav";
@@ -39,21 +40,7 @@ export default function RootLayout({
                 href="/"
                 className="flex h-10 w-10 flex-shrink-0 items-center justify-center no-underline"
               >
-                <svg width="40" height="40" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-                  <rect width="64" height="64" rx="14" fill="#8ec07c" />
-                  <text
-                    x="32"
-                    y="35"
-                    textAnchor="middle"
-                    dominantBaseline="central"
-                    fontFamily="var(--font-jetbrains-mono), monospace"
-                    fontSize="34"
-                    fontWeight="700"
-                    fill="#282828"
-                  >
-                    F
-                  </text>
-                </svg>
+                <Image src="/Icon.svg" width={40} height={40} alt="Finley Neilson" />
               </Link>
               <SiteNav />
             </aside>
