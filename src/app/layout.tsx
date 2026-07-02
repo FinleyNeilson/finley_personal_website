@@ -1,7 +1,7 @@
 import "~/styles/globals.css";
 
 import { type Metadata } from "next";
-import { Geist, JetBrains_Mono } from "next/font/google";
+import { JetBrains_Mono, Work_Sans } from "next/font/google";
 import Link from "next/link";
 
 import { SiteNav } from "~/components/site-nav";
@@ -16,9 +16,9 @@ export const metadata: Metadata = {
   ],
 };
 
-const geist = Geist({
+const workSans = Work_Sans({
   subsets: ["latin"],
-  variable: "--font-geist-sans",
+  variable: "--font-work-sans",
 });
 
 const jetbrainsMono = JetBrains_Mono({
@@ -30,9 +30,9 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${geist.variable} ${jetbrainsMono.variable}`}>
+    <html lang="en" className={`${workSans.variable} ${jetbrainsMono.variable}`}>
       <body className="bg-bg0 font-sans text-fg1 antialiased">
-        <div className="mx-auto flex min-h-screen max-w-5xl flex-col px-6 py-24 sm:px-12">
+        <div className="mx-auto flex min-h-screen max-w-5xl flex-col px-6 py-34 sm:px-12">
           <div className="flex min-h-0 flex-1 flex-col gap-8 sm:grid sm:grid-cols-[7rem_1fr_7rem] sm:gap-16">
             <aside className="flex flex-shrink-0 flex-row items-center gap-6 sm:flex-col sm:items-start sm:gap-14">
               <Link
