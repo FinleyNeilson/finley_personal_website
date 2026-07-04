@@ -22,6 +22,10 @@
 }
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     background-color: var(--color-bg0);
     color: var(--color-fg1);
@@ -35,5 +39,47 @@
 
   a:hover {
     color: var(--color-accent-bright);
+  }
+
+  .footnotes {
+    margin-top: 1rem;
+    border-top: 1px solid var(--color-bg2);
+    padding-top: 1.5rem;
+    font-size: 0.875rem;
+    color: var(--color-fg4);
+  }
+
+  .footnotes #footnote-label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+
+  .footnotes ol {
+    list-style-type: decimal;
+    list-style-position: outside;
+    padding-left: 1.25rem;
+  }
+
+  .footnotes li {
+    padding-left: 0.5rem;
+  }
+
+  .footnotes .data-footnote-backref {
+    margin-left: 0.25rem;
+    text-decoration: none;
+    font-size: 0;
+  }
+
+  .footnotes .data-footnote-backref::before {
+    content: "↩";
+    font-family: var(--font-mono), monospace;
+    font-size: 0.875rem;
   }
 }

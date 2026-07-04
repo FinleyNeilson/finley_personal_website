@@ -15,7 +15,10 @@ export function SiteNav() {
   return (
     <nav className="flex flex-row gap-5 sm:flex-col sm:gap-2">
       {links.map((link) => {
-        const isActive = pathname === link.href;
+        const isActive =
+          link.href === "/"
+            ? pathname === link.href
+            : pathname.startsWith(link.href);
 
         return (
           <Link
