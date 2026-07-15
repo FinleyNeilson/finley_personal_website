@@ -1,0 +1,21 @@
+---
+title: "Building Shape Transform"
+date: "2026-07-16"
+---
+
+Shape Transform is a 3D puzzle game where you rotate a cluster of blocks, one
+step at a time, to match a target shape before the clock runs out. I built it
+to explore spatial reasoning as a game mechanic, and to get more comfortable
+with Three.js.
+
+The core challenge was representing a cluster of unit cubes as a single
+rotatable object and generating puzzles that are solvable in a bounded number
+of moves. Each puzzle is scored against an optimal move count, so brute-forcing
+rotations costs you: too many steps and there are consequences.
+
+The frontend is React with Three.js handling the 3D rendering and rotation
+animations, backed by a small Node.js API for the leaderboard. It's deployed
+on Render.
+
+Check it out on the [projects page](/projects), or play it directly at
+[shapetransform.onrender.com](https://shapetransform.onrender.com/home).

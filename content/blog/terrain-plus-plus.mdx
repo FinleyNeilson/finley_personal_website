@@ -1,0 +1,26 @@
+---
+title: "Building Terrain++"
+date: "2026-07-16"
+---
+
+Terrain++ is a real-time procedural terrain generator written in C++ with
+OpenGL, built as part of a graphics course group project. The goal was to
+generate believable mountainous landscapes entirely from noise, with fast
+enough iteration that you could tune the look live instead of waiting on
+offline bakes.
+
+The base heightmap comes from a layered fbm (fractal Brownian motion) noise
+function: octaves, frequency, amplitude, gain, and lacunarity are all
+exposed as sliders, so stacking noise layers is a matter of dragging values
+and watching the mesh deform immediately. On top of that, a thermal erosion
+pass simulates material sliding downhill over many iterations, which is
+what turns raw noise into terrain with plausible ridgelines and scree
+slopes instead of just bumpy noise.
+
+Material is textured procedurally by slope and height, blending snow, stone,
+and grass layers with tintable RGB multipliers, all tiled independently in
+X and Z. The whole thing runs through an ImGui debug panel, which made it
+far easier to compare erosion settings side by side than editing config
+files and re-running.
+
+Source is on [GitHub](https://github.com/FinleyNeilson/CGRA350GroupProject).

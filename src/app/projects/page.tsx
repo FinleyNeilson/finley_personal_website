@@ -1,10 +1,18 @@
+import { ProjectCard } from "~/components/project-card";
+import { getAllProjects } from "~/lib/projects";
+
 export default function ProjectsPage() {
+  const projects = getAllProjects();
+
+  if (projects.length === 0) {
+    return <p className="text-fg4">Projects coming soon.</p>;
+  }
+
   return (
-    <div className="flex flex-col gap-6">
-      <h1 className="text-2xl font-bold tracking-wide text-fg0 uppercase">
-        Projects
-      </h1>
-      <p className="text-fg4">Projects coming soon.</p>
+    <div className="flex flex-col">
+      {projects.map((project) => (
+        <ProjectCard key={project.slug} project={project} />
+      ))}
     </div>
   );
 }
