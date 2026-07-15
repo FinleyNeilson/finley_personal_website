@@ -6,9 +6,9 @@ import { type Project } from "~/lib/projects";
 
 export function ProjectCard({ project }: { project: Project }) {
   return (
-    <div className="flex flex-col gap-6 border-b border-bg2 py-8 first:pt-0 last:border-b-0 sm:w-[calc(100%+7rem)] sm:flex-row sm:items-start">
+    <div className="flex flex-col gap-6 rounded-lg border border-bg2 bg-bg1/40 p-6 sm:w-[calc(100%+7rem)] sm:flex-row sm:items-start">
       {project.image && (
-        <div className="relative aspect-[3/2] w-full flex-shrink-0 overflow-hidden rounded-md border border-bg2 sm:w-72">
+        <div className="relative aspect-[3/2] w-full flex-shrink-0 overflow-hidden rounded-md sm:w-72">
           <Image
             src={project.image}
             alt={`Screenshot of ${project.title}`}
