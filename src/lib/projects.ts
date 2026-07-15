@@ -26,16 +26,10 @@ function stripMarkdown(text: string): string {
     .trim();
 }
 
-function getExcerpt(markdown: string, maxLength?: number): string {
+function getExcerpt(markdown: string): string {
   const firstParagraph =
     markdown.split(/\n\s*\n/).find((p) => p.trim().length > 0) ?? "";
-  const text = stripMarkdown(firstParagraph);
-
-  if (!maxLength || text.length <= maxLength) return text;
-
-  const cut = text.slice(0, maxLength);
-  const lastSpace = cut.lastIndexOf(" ");
-  return `${cut.slice(0, lastSpace > 0 ? lastSpace : maxLength).trimEnd()}…`;
+  return stripMarkdown(firstParagraph);
 }
 
 export function getAllProjects(): Project[] {
@@ -54,7 +48,7 @@ export function getAllProjects(): Project[] {
     let description = getExcerpt(content);
     if (projectPageSlug) {
       try {
-        description = getExcerpt(getPostBySlug(projectPageSlug).content, 220);
+        description = getExcerpt(getPostBySlug(projectPageSlug).content);
       } catch {
         // fall back to the project's own description
       }

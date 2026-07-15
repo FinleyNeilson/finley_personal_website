@@ -6,7 +6,7 @@ import { type Project } from "~/lib/projects";
 
 export function ProjectCard({ project }: { project: Project }) {
   return (
-    <div className="flex flex-col gap-6 border-b border-bg2 py-8 first:pt-0 last:border-b-0 sm:w-[calc(100%+7rem)] sm:flex-row sm:items-start">
+    <div className="flex flex-col gap-6 border-b border-bg2 py-7 first:pt-0 last:border-b-0 sm:w-[calc(100%+11rem)] sm:flex-row sm:items-start">
       {project.image && (
         <div className="relative aspect-[3/2] w-full flex-shrink-0 overflow-hidden rounded-md border border-bg2 sm:w-72">
           <Image
@@ -38,20 +38,18 @@ export function ProjectCard({ project }: { project: Project }) {
           </span>
         )}
 
-        <p className="text-fg4">
-          {project.description}
+        <div className="flex flex-col gap-1">
+          <p className="line-clamp-5 text-fg4">{project.description}</p>
+
           {project.projectPageSlug && (
-            <>
-              {" "}
-              <Link
-                href={`/blog/${project.projectPageSlug}`}
-                className="whitespace-nowrap text-fg4 underline decoration-dotted underline-offset-4 hover:text-fg1"
-              >
-                Continue reading →
-              </Link>
-            </>
+            <Link
+              href={`/blog/${project.projectPageSlug}`}
+              className="w-fit whitespace-nowrap text-fg4 underline decoration-dotted underline-offset-4 hover:text-fg1"
+            >
+              Continue reading →
+            </Link>
           )}
-        </p>
+        </div>
 
         {project.tags.length > 0 && (
           <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
