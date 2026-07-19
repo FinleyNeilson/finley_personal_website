@@ -4,7 +4,7 @@ date: "2026-07-17"
 ---
 
 Shape Transform is a 3D puzzle game where you rotate a cluster of blocks, one
-step at a time, to match a target shape before the clock runs out. I built it
+step at a time, to match a target shape before the clock runs out[^1]. I built it
 with my group, Blockarang, as an alternative to the Vandenberg Mental
 Rotations Test, the standard way spatial reasoning gets measured. It's
 psychometrically solid but genuinely boring, so the goal was to keep the same
@@ -40,9 +40,8 @@ avoid gimbal lock, though it has the nice side effect of making the rotation
 state harder to tamper with from the browser console, since quaternion math
 isn't something you can eyeball and edit.
 
-Check it out on the [projects page](/projects), or play it directly[^1]. The
-full written report[^2] covers the architecture, testing setup, and project
-retro in more detail.
+Check it out on the [projects page](/projects). The full written report[^2]
+covers the architecture, testing setup, and project retro in more detail.
 
 [^1]: Live deployment on Render. The free tier spins down when idle, so expect a cold start delay of up to 40 seconds on the first load: https://shapetransform.onrender.com/home
 [^2]: [Full written report (PDF)](/reports/shape-transform-report.pdf)
