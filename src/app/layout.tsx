@@ -4,6 +4,7 @@ import { type Metadata } from "next";
 import { JetBrains_Mono, Work_Sans } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
+import { Analytics } from "@vercel/analytics/next"
 
 import { SiteNav } from "~/components/site-nav";
 import { SiteFooter } from "~/components/site-footer";
@@ -55,6 +56,7 @@ export default function RootLayout({
             </main>
           </div>
         </div>
+        <Analytics />
       </body>
     </html>
   );
