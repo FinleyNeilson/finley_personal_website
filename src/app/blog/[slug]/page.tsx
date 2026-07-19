@@ -30,7 +30,7 @@ export default async function BlogPostPage({
           {formatPostDate(post.date)}
         </span>
       </div>
-      <div className="flex flex-col gap-4 leading-relaxed text-fg1">
+      <div className="blog-content flex flex-col gap-4 leading-relaxed text-fg1">
         <MDXRemote
           source={post.content}
           options={{ mdxOptions: { remarkPlugins: [remarkGfm] } }}

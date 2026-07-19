@@ -42,6 +42,22 @@
     color: var(--color-accent-bright);
   }
 
+  [data-footnote-ref] {
+    margin-left: 0.2em;
+  }
+
+  .blog-content img {
+    max-width: 65%;
+    border: 1px solid var(--color-bg2);
+    border-radius: 0.5rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .blog-content img.wide-image {
+    max-width: 100%;
+  }
+
   .footnotes {
     margin-top: 1rem;
     border-top: 1px solid var(--color-bg2);

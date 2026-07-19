@@ -1,21 +1,48 @@
 ---
 title: "Building Shape Transform"
-date: "2026-07-16"
+date: "2026-07-17"
 ---
 
 Shape Transform is a 3D puzzle game where you rotate a cluster of blocks, one
 step at a time, to match a target shape before the clock runs out. I built it
-to explore spatial reasoning as a game mechanic, and to get more comfortable
-with Three.js.
+with my group, Blockarang, as an alternative to the Vandenberg Mental
+Rotations Test, the standard way spatial reasoning gets measured. It's
+psychometrically solid but genuinely boring, so the goal was to keep the same
+cognitive workout while making it something people would actually want to
+play.
 
-The core challenge was representing a cluster of unit cubes as a single
-rotatable object and generating puzzles that are solvable in a bounded number
-of moves. Each puzzle is scored against an optimal move count, so brute-forcing
-rotations costs you: too many steps and there are consequences.
+![A sample sheet from the Vandenberg Mental Rotations Test](/blog/vandenberg-mental-rotations-test.png)
 
-The frontend is React with Three.js handling the 3D rendering and rotation
-animations, backed by a small Node.js API for the leaderboard. It's deployed
-on Render.
+The stack is MERN (MongoDB, Express, React, Node.js), with Three.js via React
+Three Fiber handling the 3D rendering. Puzzles are generated procedurally:
+rather than building a target shape and hoping it's reachable, the generator
+starts from a valid configuration and applies a sequence of rotations along
+the x, y, or z axis to produce the goal state, which guarantees every puzzle
+served is solvable. Difficulty tiers control how many steps are baked in, and
+the hardest tier mixes in 45-degree rotations alongside the standard 90-degree
+turns.
 
-Check it out on the [projects page](/projects), or play it directly at
-[shapetransform.onrender.com](https://shapetransform.onrender.com/home).
+![The game view, mid-puzzle, with the target shape shown alongside the
+active block cluster](/blog/shape-transform-gameplay.png)
+
+One decision worth calling out is where the target puzzle state gets
+rendered. Doing it server-side keeps the solution hidden from anyone poking
+around in the browser inspector, but it costs about a second to generate and
+serve each image, which is long enough to make the game feel sluggish.
+Rendering it client-side is instant and cuts hosting costs, at the price of
+exposing the raw rotation data to anyone who opens dev tools. We went with
+client-side rendering: a determined player could technically read the target
+state out of memory, but a one-second wait on every puzzle would have hurt
+the pacing far more than that theoretical exploit was worth.
+
+Rotations themselves run on quaternions rather than Euler angles, mainly to
+avoid gimbal lock, though it has the nice side effect of making the rotation
+state harder to tamper with from the browser console, since quaternion math
+isn't something you can eyeball and edit.
+
+Check it out on the [projects page](/projects), or play it directly[^1]. The
+full written report[^2] covers the architecture, testing setup, and project
+retro in more detail.
+
+[^1]: Live deployment on Render. The free tier spins down when idle, so expect a cold start delay of up to 40 seconds on the first load: https://shapetransform.onrender.com/home
+[^2]: [Full written report (PDF)](/reports/shape-transform-report.pdf)
