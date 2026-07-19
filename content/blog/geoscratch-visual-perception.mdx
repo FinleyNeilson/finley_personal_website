@@ -3,35 +3,32 @@ title: "Designing GeoScratch Around How Vision Already Works"
 date: "2026-07-18"
 ---
 
-Who hasn't stared at a maths problem and felt like it was written in a
-foreign language? And who has felt the opposite: that moment where the
-understanding clicks into place and the whole thing suddenly feels obvious?
+[GeoScratch](/projects) is a block-based environment for learning 3D
+geometry and linear algebra, and the subject of my honours research. The
+idea behind it is simple: humans already have an enormous head start when
+it comes to three dimensional space. We've been navigating it, judging
+depth, and tracking objects moving through it since before we could talk.
+That's intuition your visual system builds for free, and it's a much better
+foundation to teach from than intuitions about, say, prime numbers, which
+are hard-won and mostly reserved for professional mathematicians. My
+research asks what happens if we design 3D geometry teaching tools around
+that existing visual intuition, instead of asking students to painfully
+rebuild it from formulas and static diagrams alone.
 
-I can't architect that second moment for everyone, in every mathematical
-scenario. Intuitions about prime numbers, for instance, are hard-won and
-mostly reserved for professional mathematicians. But there's one area where
-humans already have an enormous head start: three dimensional space. We've
-been navigating it, judging depth, and tracking objects moving through it
-since before we could talk. That's intuition your visual system builds for
-free, and it's the starting point for my honours research: how do we design
-tools that put that same visual intuition to work for maths education,
-instead of asking students to painfully rebuild it from formulas and
-ambiguous static diagrams alone.
-
-Textbook diagrams, lecture slides, notes on a whiteboard: these are all flat.
+Textbook diagrams, lecture slides, and notes on a whiteboard are all flat.
 Every time you look at a page and try to work out which line is in front,
 how far apart two points really are, or what a rotation actually looks like,
 you're doing translation work the page isn't helping you with. Your brain is
 used to real depth cues: shadows, lighting, occlusion. Take those away, and
 even someone who understands the maths perfectly can misjudge the picture.
-That's not a knowledge gap, it's a perception gap.
+That's not a knowledge gap, it's a perception gap, and it's the gap
+GeoScratch is trying to close.
 
-That's the question behind [GeoScratch](/projects): what happens if we
-design 3D geometry teaching tools around how human vision actually works.
-It's a block-based environment for learning 3D geometry and linear algebra,
-and instead of static diagrams, it renders shapes using existing research on
-visual perception: shadows that ground objects in space, occlusion
-management that reveals what's in front of what.
+Instead of static diagrams, GeoScratch renders shapes using existing
+research on visual perception: shadows that ground objects in space,
+occlusion management that reveals what's in front of what. Scenes are built
+by snapping together blocks for vectors, planes, lines, and primitive
+shapes, rather than writing out coordinates and formulas by hand.
 
 ![GeoScratch's block-based programming interface, with blocks for vector
 arithmetic, planes, lines, and primitive shapes](/blog/geoscratch-blocks.png)
@@ -39,35 +36,35 @@ arithmetic, planes, lines, and primitive shapes](/blog/geoscratch-blocks.png)
 ![A rendered scene grounding two objects in 3D space using shadows and
 axis lines](/projects/geoscratch.png)
 
-There's a second piece to it. Most tools show you the answer, a finished
-vector or a completed projection, as a static result, without ever showing
-you how it got there. GeoScratch animates the solution process itself,
-letting students watch a rotation unfold or a projection form step by step
-rather than just staring at where it ended up. Subtle motion and
-highlighting also guide a student's attention to exactly the part of the
-scene that matters most, the way an annotated distance calculation below
-draws your eye straight to the value it's explaining.
+There's a second piece to it beyond just rendering. Most tools show you the
+answer, a finished vector or a completed projection, as a static result,
+without ever showing you how it got there. GeoScratch animates the solution
+process itself, letting students watch a rotation unfold or a projection
+form step by step rather than just staring at where it ended up. Subtle
+motion and highlighting also guide a student's attention to exactly the
+part of the scene that matters most, the way an annotated distance
+calculation below draws your eye straight to the value it's explaining.
 
 ![A GeoScratch scene annotating a point-to-plane distance calculation, with
 labelled vectors P, Q, and the projection distance](/blog/geoscratch-distance-annotation.png)
 
-The research itself tests which of these techniques actually help:
-measuring how quickly and accurately people judge depth and orientation
-under different rendering conditions, and whether watching a process
-animate, rather than just seeing its result, helps them understand that
-process more clearly. That part is still ongoing, so consider this post a
-progress report rather than a conclusion.
-
-For a lot of students, staring at a formula with no way in is the whole
-problem. If we design tools that lead with what the eye already knows how to
-do, before asking students to translate that into symbols, we close the gap
+None of this is guaranteed to actually help, which is where the research
+comes in. I'm testing whether these techniques measurably improve how
+quickly and accurately people judge depth and orientation, and whether
+watching a process animate, rather than just seeing its result, helps them
+understand that process more clearly. That part is still ongoing, so
+consider this post a progress report rather than a conclusion. For a lot of
+students, staring at a formula with no way in is the whole problem, and if
+tools can lead with what the eye already knows how to do before asking
+students to translate that into symbols, they can close some of the gap
 between the intuition a student already has and the page of formulas that's
 supposed to describe it.
 
-If you're studying computer science, engineering, or a related field, can
-complete a questionnaire in English, and have normal vision and hearing,
-I'm looking for participants for a 1 hour study on using GeoScratch to learn
-3D geometry. All skill levels welcome, rusty geometry included.
+If you're studying (or have studied) computer science, engineering, or a
+related field, can complete a questionnaire in English, and have normal vision
+and hearing, I'm looking for participants for a 1 hour study on using
+GeoScratch to learn 3D geometry. All skill levels welcome, rusty geometry
+included.
 
 ![A recruitment flyer for the GeoScratch user study](/blog/geoscratch-participants-flyer.png)
 
