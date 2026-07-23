@@ -49,7 +49,7 @@ export default function RootLayout({
             <div className="sm:col-start-1 sm:row-start-2">
               <SiteNav />
             </div>
-            <div className="flex min-h-0 flex-col sm:col-start-2 sm:row-start-2">
+            <div className="mt-6 flex min-h-0 flex-col sm:col-start-2 sm:row-start-2 sm:mt-0">
               <div className="flex min-h-0 flex-1 flex-col gap-6 sm:gap-14">{children}</div>
               <SiteFooter />
             </div>
