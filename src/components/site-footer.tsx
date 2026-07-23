@@ -3,7 +3,7 @@ import { SiGoodreads, SiLeetcode } from "react-icons/si";
 
 export function SiteFooter() {
   return (
-    <footer className="mt-20 flex flex-col items-start justify-between gap-4 text-sm text-fg4 sm:flex-row sm:items-center">
+    <footer className="mt-10 flex flex-col items-start justify-between gap-4 text-sm text-fg4 sm:mt-20 sm:flex-row sm:items-center">
       <p>© {new Date().getFullYear()} Finley Neilson.</p>
       <div className="flex items-center gap-3">
         <a href="mailto:finleyjohnneilson@gmail.com" aria-label="Email" className="text-accent hover:text-blue">

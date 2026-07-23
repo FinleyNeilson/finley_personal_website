@@ -27,6 +27,30 @@
     scrollbar-gutter: stable;
   }
 
+  .site-grid {
+    display: grid;
+    row-gap: 2rem;
+    grid-template-areas:
+      "icon"
+      "name"
+      "nav"
+      "content"
+      "footer";
+  }
+
+  @media (min-width: 640px) {
+    .site-grid {
+      grid-template-columns: 7rem 1fr 7rem;
+      column-gap: 4rem;
+      row-gap: 3.5rem;
+      grid-template-areas:
+        "icon name name"
+        "nav name name"
+        "nav content content"
+        "nav footer footer";
+    }
+  }
+
   body {
     background-color: var(--color-bg0);
     color: var(--color-fg1);
