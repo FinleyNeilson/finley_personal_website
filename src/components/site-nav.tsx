@@ -30,7 +30,7 @@ export function SiteNav() {
             }`}
           >
             <span
-              className={`absolute left-1/2 top-full -mt-1.5 -translate-x-1/2 sm:top-auto sm:-left-3 sm:mt-0 sm:translate-x-0 ${isActive ? "opacity-100" : "opacity-0"}`}
+              className={`absolute left-1/2 top-full -translate-x-1/2 sm:top-auto sm:-left-3 sm:mt-0 sm:translate-x-0 ${isActive ? "opacity-100" : "opacity-0"}`}
             >
               •
             </span>
