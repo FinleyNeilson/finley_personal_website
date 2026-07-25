@@ -44,7 +44,7 @@ export default function RootLayout({
               <Image src="/Icon.svg" width={40} height={40} alt="Finley Neilson" />
             </Link>
             <h1 className="flex h-10 items-center font-sans text-2xl font-bold tracking-wide text-fg0 sm:col-start-2 sm:row-start-1">
-              <Link href="/" className="no-underline">
+              <Link href="/" className="text-fg0 no-underline hover:text-fg0">
                 Finley Neilson
               </Link>
             </h1>
