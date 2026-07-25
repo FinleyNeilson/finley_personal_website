@@ -44,7 +44,9 @@ export default function RootLayout({
               <Image src="/Icon.svg" width={40} height={40} alt="Finley Neilson" />
             </Link>
             <h1 className="flex h-10 items-center font-sans text-2xl font-bold tracking-wide text-fg0 sm:col-start-2 sm:row-start-1">
-              Finley Neilson
+              <Link href="/" className="no-underline">
+                Finley Neilson
+              </Link>
             </h1>
             <div className="sm:col-start-1 sm:row-start-2">
               <SiteNav />
