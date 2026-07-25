@@ -39,7 +39,7 @@ export default function RootLayout({
           <div className="flex min-h-0 flex-1 flex-col gap-8 sm:grid sm:grid-cols-[7rem_1fr_7rem] sm:grid-rows-[auto_1fr] sm:gap-x-16 sm:gap-y-14">
             <Link
               href="/"
-              className="flex h-10 w-10 flex-shrink-0 items-center justify-center no-underline sm:col-start-1 sm:row-start-1"
+              className="flex h-10 w-10 flex-shrink-0 items-center justify-center no-underline sm:sticky sm:top-20 sm:col-start-1 sm:row-start-1"
             >
               <Image src="/Icon.svg" width={40} height={40} alt="Finley Neilson" />
             </Link>
@@ -48,7 +48,7 @@ export default function RootLayout({
                 Finley Neilson
               </Link>
             </h1>
-            <div className="sm:col-start-1 sm:row-start-2">
+            <div className="sm:sticky sm:top-44 sm:col-start-1 sm:row-start-2 sm:self-start">
               <SiteNav />
             </div>
             <div className="mt-6 flex min-h-0 flex-col sm:col-start-2 sm:row-start-2 sm:mt-0">
