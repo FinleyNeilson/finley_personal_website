@@ -18,6 +18,7 @@
   --color-accent-bright: #8ec07c;
   --color-pink: #d3869b;
   --color-yellow: #b57614;
+  --color-gold: #cba764;
   --color-blue: #458588;
 }
 
@@ -40,6 +41,11 @@
 
   a:hover {
     color: var(--color-accent-bright);
+  }
+
+  ::selection {
+    background-color: var(--color-gold);
+    color: var(--color-bg0);
   }
 
   [data-footnote-ref] {
